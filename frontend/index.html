@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KÅSA - Minimalist Interior & Furniture Design</title>
+    <meta name="description" content="Sculptural furniture, hand-blown lighting, and curated decor designed to bring quiet luxury and warmth to your home.">
+    <!-- Fonts: Outfit (Header) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="glass-header" id="main-header">
+        <div class="nav-container">
+            <a href="#" class="brand-logo" id="brand-logo">
+                <span class="logo-accent">KÅ</span>SA
+            </a>
+            
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="search-input" placeholder="Search furniture, lighting, decor...">
+            </div>
+
+            <nav class="nav-links">
+                <button class="cart-btn" id="cart-toggle-btn" aria-label="Open Shopping Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero-banner">
+            <div class="hero-content">
+                <span class="hero-subtitle">ARCHITECTURAL DESIGN</span>
+                <h1 class="hero-title">Create a Harmonious Home</h1>
+                <p class="hero-description">Explore our collection of sculptural lounge chairs, organic lighting vessels, and travertine tables. Crafted to bring warmth, texture, and quiet luxury to your daily living spaces.</p>
+                <a href="#catalog-section" class="btn btn-primary">Explore Collection</a>
+            </div>
+            <div class="hero-glow"></div>
+        </section>
+
+        <!-- Catalog Section -->
+        <section class="catalog-section" id="catalog-section">
+            <div class="section-header">
+                <h2 class="section-title">Curated Pieces</h2>
+                <div class="category-filters" id="category-filters">
+                    <button class="filter-btn active" data-category="all" id="filter-all">All</button>
+                    <button class="filter-btn" data-category="Chairs" id="filter-chairs">Chairs</button>
+                    <button class="filter-btn" data-category="Lighting" id="filter-lighting">Lighting</button>
+                    <button class="filter-btn" data-category="Tables" id="filter-tables">Tables</button>
+                    <button class="filter-btn" data-category="Decor" id="filter-decor">Decor</button>
+                </div>
+            </div>
+
+            <!-- Loader -->
+            <div class="loader-container" id="loader">
+                <div class="spinner"></div>
+                <p>Curating collection from database...</p>
+            </div>
+
+            <!-- Error message if API fails -->
+            <div class="error-container hidden" id="error-message">
+                <i class="fa-solid fa-circle-exclamation error-icon"></i>
+                <p>Failed to connect to the backend server. Please verify your docker containers are active!</p>
+                <button class="btn btn-secondary btn-sm" id="retry-btn">Retry Connection</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid hidden" id="products-grid">
+                <!-- Product cards dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar Drawer -->
+    <div class="cart-drawer-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3 class="cart-title">Your Bag</h3>
+            <button class="close-btn" id="cart-close-btn" aria-label="Close Shopping Cart">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="cart-items-container" id="cart-items">
+            <!-- Cart Items dynamic load -->
+            <div class="empty-cart-msg">
+                <i class="fa-solid fa-bag-shopping empty-icon"></i>
+                <p>Your bag is currently empty.</p>
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <span class="summary-label">Total</span>
+                <span class="summary-value" id="cart-total">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkout-btn" disabled>Proceed to Checkout</button>
+        </div>
+    </aside>
+
+    <!-- Toast Notification System -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 KÅSA Design Inc. Built by DevOps Interns. All rights reserved.</p>
+            <div class="footer-status">
+                <span class="status-indicator online" id="status-indicator"></span>
+                <span id="status-text">Connecting to Server...</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Frontend JS -->
+    <script src="app.js"></script>
+</body>
+</html>
