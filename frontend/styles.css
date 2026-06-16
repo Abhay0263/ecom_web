@@ -1,34 +1,35 @@
-/* Design Tokens & Theme Variables - Warm Minimalist Interior Theme */
+/* Design Tokens & Theme Variables - Royal Antique & Modern Theme */
 :root {
-    --bg-light: #fdfdfc;
-    --bg-surface: #f7f5f0;
-    --bg-surface-hover: #f1ede5;
-    --border-color: rgba(31, 30, 28, 0.08);
-    --border-hover: rgba(143, 126, 104, 0.4);
+    --bg-dark: #0a0d14;
+    --bg-surface: #101420;
+    --bg-surface-hover: #161c2c;
+    --border-color: rgba(197, 168, 128, 0.12);
+    --border-hover: rgba(197, 168, 128, 0.45);
     
     /* Core Typography Colors */
-    --text-primary: #1f1d1a;
-    --text-secondary: #706a60;
-    --text-muted: #9c958a;
+    --text-primary: #f5f6f8;
+    --text-secondary: #a3aab6;
+    --text-muted: #727a86;
     
-    /* Elegant Accents */
-    --accent-bronze: #8f7e68;
-    --accent-gold: #c2b093;
-    --accent-dark: #2c2925;
-    --accent-green: #5c6c59;
-    --accent-red: #b85c5c;
+    /* Elegant Royal Accents (Polished Brass, Gold, Deep Emerald) */
+    --accent-gold: #c5a880;
+    --accent-gold-bright: #e3cca1;
+    --accent-bronze: #8a7355;
+    --accent-emerald: #40584b;
+    --accent-red: #c05c5c;
+    --accent-green: #5ca67e;
     
-    --grad-primary: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent-bronze) 100%);
-    --shadow-soft: 0 4px 20px rgba(31, 30, 28, 0.04);
-    --shadow-hover: 0 10px 30px rgba(143, 126, 104, 0.12);
+    --grad-primary: linear-gradient(135deg, var(--accent-gold-bright) 0%, var(--accent-gold) 100%);
+    --grad-glow: 0 0 20px rgba(197, 168, 128, 0.15);
+    --grad-glow-strong: 0 0 35px rgba(197, 168, 128, 0.35);
     
     /* Layout & Styling details */
     --font-header: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
     --header-height: 85px;
-    --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-    --border-radius-lg: 12px;
-    --border-radius-md: 8px;
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --border-radius-lg: 16px;
+    --border-radius-md: 10px;
 }
 
 /* Reset and Base Styles */
@@ -40,12 +41,11 @@
 }
 
 body {
-    background-color: var(--bg-light);
+    background-color: var(--bg-dark);
     color: var(--text-primary);
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
 }
 
 /* Custom Scrollbar */
@@ -53,40 +53,39 @@ body {
     width: 6px;
 }
 ::-webkit-scrollbar-track {
-    background: var(--bg-light);
+    background: var(--bg-dark);
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--border-color);
+    background: rgba(197, 168, 128, 0.15);
     border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-bronze);
+    background: var(--accent-gold);
 }
 
 /* Typography Helpers */
 h1, h2, h3, h4 {
     font-family: var(--font-header);
     font-weight: 500;
-    letter-spacing: -0.02em;
 }
 
 /* Layout Container */
 .main-content {
     max-width: 1280px;
     margin: 0 auto;
-    padding: calc(var(--header-height) + 20px) 24px 80px 24px;
+    padding: calc(var(--header-height) + 30px) 24px 80px 24px;
 }
 
-/* Premium Minimalist Header */
+/* Premium Glassmorphism Header with Gold Tint */
 .glass-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: var(--header-height);
-    background: rgba(253, 253, 252, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(10, 13, 20, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
     z-index: 100;
     display: flex;
@@ -108,7 +107,7 @@ h1, h2, h3, h4 {
     font-family: var(--font-header);
     font-size: 28px;
     font-weight: 600;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
     color: var(--text-primary);
     text-decoration: none;
     display: flex;
@@ -116,10 +115,11 @@ h1, h2, h3, h4 {
 }
 
 .logo-accent {
-    color: var(--accent-bronze);
+    color: var(--accent-gold-bright);
+    text-shadow: 0 0 10px rgba(197, 168, 128, 0.3);
 }
 
-/* Minimalist Search Bar */
+/* Search Bar styling */
 .search-bar {
     position: relative;
     width: 380px;
@@ -130,15 +130,16 @@ h1, h2, h3, h4 {
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--text-muted);
+    color: var(--accent-gold);
+    opacity: 0.7;
 }
 
 .search-bar input {
     width: 100%;
-    background: var(--bg-surface);
-    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-color);
     padding: 12px 16px 12px 46px;
-    border-radius: 30px;
+    border-radius: 50px;
     color: var(--text-primary);
     font-size: 14px;
     outline: none;
@@ -146,9 +147,9 @@ h1, h2, h3, h4 {
 }
 
 .search-bar input:focus {
-    border-color: var(--accent-bronze);
-    background: var(--bg-light);
-    box-shadow: var(--shadow-soft);
+    border-color: var(--accent-gold-bright);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: var(--grad-glow);
 }
 
 /* Navigation Links */
@@ -159,8 +160,8 @@ h1, h2, h3, h4 {
 }
 
 .cart-btn {
-    background: var(--bg-surface);
-    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
     color: var(--text-primary);
     width: 48px;
     height: 48px;
@@ -175,30 +176,31 @@ h1, h2, h3, h4 {
 }
 
 .cart-btn:hover {
-    background: var(--bg-light);
-    border-color: var(--accent-bronze);
-    color: var(--accent-bronze);
+    background: rgba(197, 168, 128, 0.05);
+    border-color: var(--accent-gold-bright);
+    color: var(--accent-gold-bright);
+    box-shadow: var(--grad-glow);
     transform: translateY(-2px);
 }
 
 .cart-badge {
     position: absolute;
-    top: -3px;
-    right: -3px;
-    background: var(--accent-bronze);
-    color: var(--bg-light);
+    top: -4px;
+    right: -4px;
+    background: var(--grad-primary);
+    color: var(--bg-dark);
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
-/* Button Components */
+/* Royal Gold & Dark Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -206,7 +208,7 @@ h1, h2, h3, h4 {
     padding: 14px 32px;
     border-radius: var(--border-radius-md);
     font-family: var(--font-header);
-    font-weight: 500;
+    font-weight: 600;
     font-size: 15px;
     cursor: pointer;
     transition: var(--transition-smooth);
@@ -216,21 +218,22 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary {
-    background: var(--accent-dark);
-    color: var(--bg-light);
+    background: var(--grad-primary);
+    color: var(--bg-dark);
+    box-shadow: var(--grad-glow);
 }
 
 .btn-primary:hover {
-    background: var(--accent-bronze);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-hover);
+    box-shadow: var(--grad-glow-strong);
 }
 
 .btn-primary:disabled {
     background: var(--text-muted);
+    color: var(--bg-dark);
+    box-shadow: none;
     cursor: not-allowed;
     transform: none;
-    box-shadow: none;
 }
 
 .btn-secondary {
@@ -240,8 +243,8 @@ h1, h2, h3, h4 {
 }
 
 .btn-secondary:hover {
-    background: var(--bg-surface);
-    border-color: var(--text-primary);
+    background: rgba(197, 168, 128, 0.05);
+    border-color: var(--accent-gold-bright);
 }
 
 .btn-block {
@@ -253,10 +256,10 @@ h1, h2, h3, h4 {
     font-size: 13px;
 }
 
-/* Hero Section */
+/* Royal Hero Banner */
 .hero-section {
     position: relative;
-    background: radial-gradient(circle at top right, rgba(230, 215, 195, 0.4), transparent 65%), var(--bg-surface);
+    background: radial-gradient(circle at top right, rgba(197, 168, 128, 0.16), transparent 65%), var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-lg);
     padding: 80px 60px;
@@ -264,6 +267,7 @@ h1, h2, h3, h4 {
     margin-bottom: 80px;
     display: flex;
     align-items: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
 }
 
 .hero-content {
@@ -276,8 +280,8 @@ h1, h2, h3, h4 {
     font-family: var(--font-header);
     font-size: 12px;
     font-weight: 600;
-    letter-spacing: 4px;
-    color: var(--accent-bronze);
+    letter-spacing: 5px;
+    color: var(--accent-gold-bright);
     margin-bottom: 20px;
     display: block;
 }
@@ -286,18 +290,17 @@ h1, h2, h3, h4 {
     font-size: 56px;
     line-height: 1.1;
     margin-bottom: 24px;
-    color: var(--accent-dark);
-    font-weight: 400;
+    color: #fff;
+    font-weight: 300;
 }
 
 .hero-description {
     color: var(--text-secondary);
     font-size: 16px;
     margin-bottom: 36px;
-    max-width: 580px;
 }
 
-/* Catalog Grid Header */
+/* Catalog Filter and Title Section */
 .catalog-section {
     margin-bottom: 80px;
 }
@@ -316,12 +319,13 @@ h1, h2, h3, h4 {
 .section-title {
     font-size: 32px;
     font-weight: 400;
-    color: var(--accent-dark);
+    color: #fff;
 }
 
 .category-filters {
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
 }
 
 .filter-btn {
@@ -329,7 +333,7 @@ h1, h2, h3, h4 {
     border: 1px solid transparent;
     color: var(--text-secondary);
     padding: 8px 24px;
-    border-radius: 30px;
+    border-radius: 50px;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -337,12 +341,14 @@ h1, h2, h3, h4 {
 }
 
 .filter-btn:hover {
-    color: var(--text-primary);
+    color: var(--accent-gold-bright);
 }
 
 .filter-btn.active {
-    background: var(--accent-dark);
-    color: var(--bg-light);
+    background: rgba(197, 168, 128, 0.08);
+    border-color: var(--accent-gold-bright);
+    color: var(--accent-gold-bright);
+    box-shadow: var(--grad-glow);
 }
 
 /* Spinner Loader */
@@ -357,10 +363,10 @@ h1, h2, h3, h4 {
 .spinner {
     width: 40px;
     height: 40px;
-    border: 2px solid rgba(143, 126, 104, 0.1);
-    border-top: 2px solid var(--accent-bronze);
+    border: 2px solid rgba(197, 168, 128, 0.1);
+    border-top: 2px solid var(--accent-gold);
     border-radius: 50%;
-    animation: spin 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation: spin 1s linear infinite;
     margin-bottom: 24px;
 }
 
@@ -371,8 +377,8 @@ h1, h2, h3, h4 {
 
 /* Error panel */
 .error-container {
-    background: rgba(184, 92, 92, 0.04);
-    border: 1px solid rgba(184, 92, 92, 0.15);
+    background: rgba(192, 92, 92, 0.05);
+    border: 1px solid rgba(192, 92, 92, 0.2);
     padding: 40px;
     border-radius: var(--border-radius-lg);
     text-align: center;
@@ -402,28 +408,32 @@ h1, h2, h3, h4 {
     gap: 40px;
 }
 
-/* Minimalist Product Card Design */
+/* Minimalist Product Card with Gold Shadow Frame */
 .product-card {
-    background: var(--bg-light);
-    border: 1px solid transparent;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
     border-radius: var(--border-radius-lg);
-    padding: 0;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     transition: var(--transition-smooth);
     position: relative;
+    overflow: hidden;
 }
 
 .product-card:hover {
     transform: translateY(-8px);
+    border-color: var(--border-hover);
+    background: var(--bg-surface-hover);
+    box-shadow: 0 10px 30px rgba(197, 168, 128, 0.08);
 }
 
 .product-img-wrapper {
     width: 100%;
-    height: 340px;
-    border-radius: var(--border-radius-lg);
+    height: 300px;
+    border-radius: var(--border-radius-md);
     overflow: hidden;
-    background: var(--bg-surface);
+    background: #090b0f;
     position: relative;
     display: flex;
     align-items: center;
@@ -438,7 +448,7 @@ h1, h2, h3, h4 {
 }
 
 .product-card:hover .product-img {
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 
 .product-info {
@@ -452,7 +462,7 @@ h1, h2, h3, h4 {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--accent-bronze);
+    color: var(--accent-gold);
     font-weight: 600;
     margin-bottom: 8px;
 }
@@ -461,7 +471,7 @@ h1, h2, h3, h4 {
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 8px;
-    color: var(--text-primary);
+    color: #fff;
 }
 
 .product-desc {
@@ -488,13 +498,13 @@ h1, h2, h3, h4 {
     font-family: var(--font-header);
     font-size: 20px;
     font-weight: 500;
-    color: var(--text-primary);
+    color: var(--accent-gold-bright);
 }
 
 .add-cart-icon-btn {
-    background: var(--accent-dark);
+    background: var(--grad-primary);
     border: none;
-    color: var(--bg-light);
+    color: var(--bg-dark);
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -506,8 +516,9 @@ h1, h2, h3, h4 {
 }
 
 .add-cart-icon-btn:hover {
-    background: var(--accent-bronze);
+    background: #fff;
     transform: scale(1.1);
+    box-shadow: var(--grad-glow-strong);
 }
 
 /* Cart Overlay/Drawer Sliders */
@@ -517,7 +528,7 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(31, 29, 26, 0.4);
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(4px);
     z-index: 150;
     opacity: 0;
@@ -536,12 +547,12 @@ h1, h2, h3, h4 {
     right: -460px;
     width: 460px;
     height: 100vh;
-    background: var(--bg-light);
+    background: var(--bg-surface);
     border-left: 1px solid var(--border-color);
     z-index: 200;
     display: flex;
     flex-direction: column;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.3);
     transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -560,6 +571,7 @@ h1, h2, h3, h4 {
 .cart-title {
     font-size: 22px;
     font-weight: 500;
+    color: #fff;
 }
 
 .close-btn {
@@ -617,7 +629,7 @@ h1, h2, h3, h4 {
     height: 90px;
     border-radius: var(--border-radius-md);
     object-fit: cover;
-    background: var(--bg-surface);
+    background: var(--bg-dark);
 }
 
 .cart-item-details {
@@ -628,12 +640,12 @@ h1, h2, h3, h4 {
     font-size: 15px;
     font-weight: 500;
     margin-bottom: 6px;
-    color: var(--text-primary);
+    color: #fff;
 }
 
 .cart-item-price {
     font-size: 14px;
-    color: var(--accent-bronze);
+    color: var(--accent-gold-bright);
     font-weight: 600;
 }
 
@@ -645,8 +657,8 @@ h1, h2, h3, h4 {
 }
 
 .qty-btn {
-    background: var(--bg-surface);
-    border: none;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-color);
     color: var(--text-primary);
     width: 28px;
     height: 28px;
@@ -660,8 +672,9 @@ h1, h2, h3, h4 {
 }
 
 .qty-btn:hover {
-    background: var(--accent-bronze);
-    color: var(--bg-light);
+    background: var(--accent-gold);
+    color: var(--bg-dark);
+    border-color: transparent;
 }
 
 .qty-val {
@@ -686,7 +699,7 @@ h1, h2, h3, h4 {
 .cart-footer {
     padding: 30px;
     border-top: 1px solid var(--border-color);
-    background: var(--bg-surface);
+    background: var(--bg-dark);
 }
 
 .cart-summary {
@@ -704,7 +717,7 @@ h1, h2, h3, h4 {
     font-family: var(--font-header);
     font-size: 24px;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--accent-gold-bright);
 }
 
 /* Toast Alerts Notification */
@@ -719,7 +732,7 @@ h1, h2, h3, h4 {
 }
 
 .toast {
-    background: var(--bg-light);
+    background: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-md);
     padding: 18px 24px;
@@ -728,7 +741,7 @@ h1, h2, h3, h4 {
     gap: 14px;
     color: var(--text-primary);
     min-width: 340px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
     animation: slideIn 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
     overflow: hidden;
@@ -754,7 +767,7 @@ h1, h2, h3, h4 {
 }
 
 .toast-info {
-    border-left: 4px solid var(--accent-bronze);
+    border-left: 4px solid var(--accent-gold);
 }
 
 .toast i {
@@ -763,14 +776,14 @@ h1, h2, h3, h4 {
 
 .toast-success i { color: var(--accent-green); }
 .toast-error i { color: var(--accent-red); }
-.toast-info i { color: var(--accent-bronze); }
+.toast-info i { color: var(--accent-gold); }
 
 .toast-progress {
     position: absolute;
     bottom: 0;
     left: 0;
     height: 2px;
-    background: var(--accent-bronze);
+    background: var(--accent-gold);
     width: 100%;
     animation: progressLinear 4s linear forwards;
 }

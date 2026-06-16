@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS products (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Seed products (Combined Workspace Furniture & Premium Electronics)
+-- Seed products (Royal Antique + Semi-Modern Workspace & Home Design)
 INSERT INTO products (name, description, price, category, image_url, stock) VALUES
 (
     'Nouveau Lounge Chair',
@@ -23,22 +23,6 @@ INSERT INTO products (name, description, price, category, image_url, stock) VALU
     15
 ),
 (
-    'Sylvan Pendant Light',
-    'A stunning hand-blown amber glass pendant light. Features custom organic shape, brushed brass accents, and an energy-efficient warm glowing LED bulb. Creates an intimate ambient glow.',
-    189.00,
-    'Lighting',
-    '/assets/pendant_light.png',
-    24
-),
-(
-    'Ceramic Vessel Duo',
-    'Set of two hand-thrown ceramic vases. Designed with organic silhouettes, matte warm white and textured sand glaze. Perfect as standalone pieces or styling shelves.',
-    75.00,
-    'Decor',
-    '/assets/ceramic_vases.png',
-    45
-),
-(
     'Travertine Coffee Table',
     'A sculptural modern low coffee table carved from organic cream travertine stone. Features a honed matte surface revealing rich natural details and unique textures.',
     899.00,
@@ -47,34 +31,50 @@ INSERT INTO products (name, description, price, category, image_url, stock) VALU
     8
 ),
 (
-    'Aether Mechanical Keyboard',
-    'A premium 75% wireless mechanical keyboard featuring hot-swappable tactile switches, double-shot PBT keycaps, dynamic warm amber backlight, and a CNC-machined dark aluminum casing.',
-    189.99,
-    'Keyboards',
-    '/assets/cyber_keyboard.png',
-    42
+    'Sylvan Pendant Light',
+    'A stunning hand-blown amber glass pendant light. Features custom organic shape, brushed brass accents, and an energy-efficient warm glowing LED bulb. Creates an intimate ambient glow.',
+    189.00,
+    'Lighting',
+    '/assets/pendant_light.png',
+    24
 ),
 (
-    'Vortex Studio Headphones',
-    'High-fidelity active noise-canceling headphones with 40mm dynamic drivers, custom acoustic chamber, 45-hour battery life, and ultra-plush memory foam ear cups for ultimate focus.',
-    299.99,
-    'Audio',
-    '/assets/studio_headphones.png',
+    'Antique Brass Desk Lamp',
+    'A classic library desk lamp featuring a polished emerald green glass shade, heavy brushed solid brass base, and dimmable warm vintage LED bulb. A timeless addition to high-end desks.',
+    220.00,
+    'Lighting',
+    '/assets/brass_desk_lamp.png',
+    18
+),
+(
+    'Antique Brass Hourglass',
+    'A beautifully sculpted 30-minute marine hourglass made of solid antiqued brass and hand-blown glass, filled with dark volcanic sand. A perfect combination of vintage charm and modern lines.',
+    120.00,
+    'Gadgets',
+    '/assets/brass_hourglass.png',
+    30
+),
+(
+    'Gramophone Speaker',
+    'An acoustic gramophone speaker featuring a hand-spun copper horn and a modern walnut wood block base. Blends classic acoustic amplification with integrated modern Bluetooth connectivity.',
+    349.00,
+    'Gadgets',
+    '/assets/gramophone_speaker.png',
+    12
+),
+(
+    'Mechanical Watch Stand',
+    'A sculptural walnut wood and brass stand holding an open-heart mechanical skeleton pocket watch. Displays ticking gold gears through crystal glass, serving as an active desktop sculpture.',
+    85.00,
+    'Gadgets',
+    '/assets/pocket_watch_stand.png',
     25
 ),
 (
-    'Zenith Ergonomic Mouse',
-    'Precision engineered vertical ergonomic wireless mouse. Reduces wrist strain with a 57-degree vertical angle, high-precision 4000 DPI sensor, and silent metal scroll wheel.',
-    89.50,
-    'Peripherals',
-    '/assets/ergonomic_mouse.png',
-    60
-),
-(
-    'Aura Wireless Earbuds',
-    'Premium active noise-canceling earbuds. Featuring audiophile-grade dynamic drivers, IPX5 sweat resistance, intelligent ambient awareness, and a compact matte-finish charging case.',
-    159.00,
-    'Audio',
-    '/assets/earbuds.png',
-    35
+    'Imperial Leather Desk Mat',
+    'Hand-crafted full-grain Italian leather desk mat in deep chestnut brown. Embellished with subtle gold-foiled geometric borders and modern anti-slip backing.',
+    95.00,
+    'Decor',
+    '/assets/leather_desk_mat.png',
+    40
 );
