@@ -22,8 +22,8 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Running unit tests inside backend container...'
-                bat 'docker compose run --rm backend npm test'
+                echo 'Running unit tests during Docker build builder stage...'
+                bat 'docker build --target builder ./backend'
             }
         }
 
