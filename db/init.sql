@@ -77,4 +77,21 @@ INSERT INTO products (name, description, price, category, image_url, stock) VALU
     'Decor',
     '/assets/leather_desk_mat.png',
     40
+),
+(
+    'Organic Ceramic Vases',
+    'A set of three minimalist ceramic vases featuring organic textures and neutral earthy tones. Perfect for displaying dried botanicals or standing as independent art pieces.',
+    65.00,
+    'Decor',
+    '/assets/ceramic_vases.png',
+    20
+),
+(
+    'Smart Ambient Light',
+    'An elegant smart ambient light bar offering customizable color spectrums, reactive music syncing, and seamless smart home integration. Housed in a sleek dark aluminum shell.',
+    149.00,
+    'Lighting',
+    '/assets/smart_ambient_light.png',
+    15
 );
+
