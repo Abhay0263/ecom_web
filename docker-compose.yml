@@ -24,6 +24,7 @@ services:
 
   # Backend API Service
   backend:
+    image: ${DOCKER_HUB_USR:-abhay0263}/ecom-backend:latest
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -46,6 +47,7 @@ services:
 
   # Frontend Nginx Web Server
   frontend:
+    image: ${DOCKER_HUB_USR:-abhay0263}/ecom-frontend:latest
     build:
       context: ./frontend
       dockerfile: Dockerfile
