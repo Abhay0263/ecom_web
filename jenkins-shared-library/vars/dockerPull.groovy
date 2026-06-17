@@ -1,4 +1,4 @@
-// jenkins-shared-library/vars/dockerPull.groovy
+// vars/dockerPull.groovy
 /**
  * Custom step to pull a Docker image from a registry (e.g. Docker Hub) using Jenkins Docker Pipeline DSL.
  *

@@ -1,4 +1,4 @@
-// jenkins-shared-library/vars/dockerBuild.groovy
+// vars/dockerBuild.groovy
 /**
  * Custom step to build a Docker image using native Jenkins Docker Pipeline DSL.
  *

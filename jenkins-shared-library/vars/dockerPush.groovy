@@ -1,4 +1,4 @@
-// jenkins-shared-library/vars/dockerPush.groovy
+// vars/dockerPush.groovy
 /**
  * Custom step to push a Docker image to a registry (e.g. Docker Hub) using Jenkins Docker Pipeline DSL.
  *
